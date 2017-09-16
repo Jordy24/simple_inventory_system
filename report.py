@@ -103,7 +103,7 @@ class report(QWidget):
         else:
             pass
 
-
+# For debugging 
 '''
 app = QApplication(sys.argv)
 gen_report = report()
