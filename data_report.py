@@ -400,7 +400,7 @@ class combined(QWidget):
             self.data_dict.clear()
 
 
-
+# For debuging before
 '''
 app = QApplication(sys.argv)
 comb = combined()
