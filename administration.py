@@ -213,7 +213,7 @@ class administration(QWidget):
         except Exception, e:
             QMessageBox.information(self,"Exit Error","During exit: "+str(e))
 
-
+# For Debugging this form
 '''
 app = QApplication(sys.argv)
 admin = administration()
