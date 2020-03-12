@@ -1,5 +1,7 @@
 level: user
+
 Success Guarantee (Postconditions):
+
 	Patient medical recordes are updated (saved)
 	User's (patient) examination results are saved
 	Payment authorization approvals are recorded
@@ -7,6 +9,7 @@ Success Guarantee (Postconditions):
 	Receipt is generated
 	
 Main success Secanrio (Basic flow):
+
 	1 Bob walksup to the hospital counter and requests to get medical service
 	2 counter staff asks bob which service (medical assistance) he would like to get
 	3 Bob specifies the service he wants
@@ -19,6 +22,7 @@ Main success Secanrio (Basic flow):
 	10 Bob pays the total amount and is provided with a reciept of the medical service
 
 Participants in the network:
+
 	- police
 	- finacial institutions
 		banks
