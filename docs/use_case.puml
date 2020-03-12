@@ -1,0 +1,68 @@
+@startuml HCS_use_case
+left to right direction
+' skinparam Handwritten true
+skinparam Shadowing false
+skinparam PackageStyle rect
+title Health Care System
+
+actor patient as patient
+actor staff as staff
+actor :doctor: as doctor
+actor :nurse: as nurse
+actor :lab_assistant: as lab_assistant
+:police_dep: as police_dep << Police system >>
+:government_dep: as gov_dep << Government system >>
+:finacial_institute: as finacial_institute
+actor pharmacist as pharmacist
+
+
+rectangle HCS_system {
+    (Register patient) as patient_registration
+    (create appointment) as create_appointment
+    (make payment) as make_payment
+    (consult doctor) as consult_doctor
+    (give prescription) as prescribe
+    (patient medical records) as patient_medical_records
+    (prescribe test) as prescribe_test
+    (prescrib medication) as prescribe_medication
+    (authorize payment) as payment_authorization
+    (care for patient) as patient_care
+    (file insurance forms/claims) as file_insurance_form
+    (file medical report) as file_medical_report
+    (issue license) as issue_license
+    (confirm appointment) as confirm_appointment
+    (issue treatment authorization) as treatment_authorization
+    (provide medicine) as medicine_provision
+    (cash transaction managment) as handle_cash_payments
+    (billing generation) as billing_generation
+
+    staff -- patient_registration
+    staff -- create_appointment
+    staff -- file_insurance_form
+    staff -- handle_cash_payments
+    staff -- confirm_appointment
+    patient -- make_payment
+    patient -- consult_doctor
+    patient -- patient_medical_records
+    patient -- create_appointment
+    patient --> confirm_appointment
+    staff --> file_insurance_form
+    doctor --> prescribe
+    prescribe ..> prescribe_medication : <<extends>>
+    prescribe .> prescribe_test : <<extends>>
+    doctor -- file_medical_report
+    staff --> billing_generation
+    pharmacist --> medicine_provision
+    gov_dep --> issue_license
+    police_dep --> treatment_authorization
+    nurse --> file_medical_report
+    nurse -- patient_care
+    finacial_institute --> payment_authorization
+    finacial_institute --> make_payment
+    lab_assistant -- file_medical_report
+
+}
+
+
+
+@enduml
